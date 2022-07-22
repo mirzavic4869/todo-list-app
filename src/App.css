@@ -1,0 +1,76 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.jumbotron{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #17345fff;
+  padding: 30px;
+  height: auto;
+}
+
+.jumbotron .form {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+ 
+}
+
+.jumbotron .form input {
+  border: none;
+  padding: 5px;
+  width: 350px;
+}
+
+
+.jumbotron .form .btn-submit {
+  background-color: #f47624ff;
+  padding: 8px 20px;
+  border-radius: 5px;
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin: 10px;
+  width: 700px;
+  border-radius: 5px;
+}
+.card .text {
+  flex: 2.8;
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: larger;
+
+}
+.button-action {
+  flex: 1;
+}
+.btn-edit {
+  background-color: #00b201ff;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  margin-right: 10px
+}
+
+.btn-delete {
+  background-color: #ff0044;
+  padding: 8px 20px;
+  border-radius: 5px;
+  color: white;
+  
+}
