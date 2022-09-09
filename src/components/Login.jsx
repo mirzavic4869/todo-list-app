@@ -16,41 +16,65 @@ const Login = () => {
 	useEffect(() => {
 		setErrMsg("");
 	}, [user, pwd]);
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setUser("");
+		setPwd("");
+		setSuccess(true);
+	};
 	return (
-		<section>
-			<p
-				ref={errRef}
-				className={errMsg ? "errMsg" : "offscreen"}
-				aria-live="assertive"
-			>
-				{errMsg}
-			</p>
-			<h1>Sign In</h1>
-			<form>
-				<label htmlFor="username">
-					Username
-					<input
-						type="text"
-						id="username"
-						ref={useRef}
-						autoComplete="off"
-						onChange={(e) => setUser(e.value.target)}
-						value={user}
-						required
-					/>
-				</label>
-				<label htmlFor="username">
-					Password
-					<input
-						type="password"
-						id="password"
-						onChange={(e) => setPwd(e.value.target)}
-						value={pwd}
-						required
-					/>
-				</label>
-			</form>
-		</section>
+		<>
+			{success ? (
+				<section>
+					<h1>You are logged in!</h1>
+					<br />
+					<p>
+						<a href="#">Go to Home</a>
+					</p>
+				</section>
+			) : (
+				<section>
+					<p
+						ref={errRef}
+						className={errMsg ? "errMsg" : "offscreen"}
+						aria-live="assertive"
+					>
+						{errMsg}
+					</p>
+					<h1>Sign In</h1>
+					<form onSubmit={handleSubmit}>
+						<label htmlFor="username">Username</label>
+						<input
+							type="text"
+							id="username"
+							ref={useRef}
+							autoComplete="off"
+							onChange={(e) => setUser(e.value.target)}
+							value={user}
+							required
+						/>
+
+						<label htmlFor="username">Password</label>
+						<input
+							type="password"
+							id="password"
+							onChange={(e) => setPwd(e.value.target)}
+							value={pwd}
+							required
+						/>
+						<button>Sign In</button>
+					</form>
+					<p>
+						Need an Account?
+						<br />
+						<span className="line">
+							<a href="#">Sign Up</a>
+						</span>
+					</p>
+				</section>
+			)}
+		</>
 	);
 };
 
