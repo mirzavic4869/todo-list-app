@@ -75,17 +75,8 @@ const Home = () => {
 				<h1 className="font-bold text-4xl mb-7 text-white">Todo List App</h1>
 				{/* {JSON.stringify(form)} */}
 				<form className="form" method="post" onSubmit={handleSubmit}>
-					<input
-						type="text"
-						name="todo"
-						value={form.todo}
-						onChange={handleChange}
-						placeholder="Todo.."
-					/>
-					<button
-						className="ml-4 font-semibold text-white btn-submit"
-						type="submit"
-					>
+					<input type="text" name="todo" value={form.todo} onChange={handleChange} placeholder="Todo.." />
+					<button className="ml-4 font-semibold text-white btn-submit" type="submit">
 						Submit
 					</button>
 				</form>
@@ -95,24 +86,14 @@ const Home = () => {
 					return (
 						<div key={i} className="card">
 							<div className="action">
-								<input
-									type="checkbox"
-									checked={e.status ? true : false}
-									onChange={() => handleCheck(i)}
-								/>
+								<input type="checkbox" checked={e.status ? true : false} onChange={() => handleCheck(i)} />
 							</div>
 							<div className="text">{e.todo}</div>
 							<div className="button-action">
-								<button
-									className="btn-edit font-semibold"
-									onClick={() => handleEdit(i)}
-								>
+								<button className="btn-edit font-semibold" onClick={() => handleEdit(i)}>
 									Edit
 								</button>
-								<button
-									className="btn-delete font-semibold"
-									onClick={() => handleDelete(i)}
-								>
+								<button className="btn-delete font-semibold" onClick={() => handleDelete(i)}>
 									Delete
 								</button>
 							</div>
